@@ -116,6 +116,17 @@ function newCowboyRight(x: number, y: number) {
     enemiesright.push(enemySprite)
 }
 
+/*function accessory_items() {
+    let items = []
+    let ph = tiles.getTilesByType(sprites.castle.rock0)
+for (let i = 0; i < ph.length; i++) {
+    let Enemy = sprites.create(assets.image`mushroomFrontLeft0`, SpriteKind.Enemy)
+    Enemy.setPosition(ph[i].x, ph[i].y)
+    Enemy.setVelocity(vxE,0)
+
+}
+}*/
+
 function newMrseagentrueform() {
     let bigbad: MrsEgan =
         new MrsEgan(assets.image`Mrs Egan True Form`, SpriteKind.Enemy)

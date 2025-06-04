@@ -257,7 +257,7 @@ f 6 6 7 7 7 f
 .........................
 `;
             case "image12":
-            case "myImage1":return img`
+            case "Bottle smasher dude":return img`
 .....f...................
 ..fffdf.......fff........
 .fbbbdf......f111ff......
@@ -421,6 +421,17 @@ ffffffffff.............................ffffffffff.
 . . . . 2 2 4 4 5 4 4 2 . . . . 
 . . . 2 2 4 4 5 5 4 4 4 2 . . . 
 . . . 2 4 4 4 5 4 d 4 4 4 2 . . 
+`;
+            case "image17":
+            case "coin":return img`
+. . b b b b . . 
+. b 5 5 5 5 b . 
+b 5 d 3 3 d 5 b 
+b 5 3 5 5 1 5 b 
+c 5 3 5 5 1 d c 
+c d d 1 1 d d c 
+. f d d d d f . 
+. . f f f f . . 
 `;
         }
         return null;
@@ -4631,6 +4642,12 @@ c b d d d b b . . . . b d d c c
         }
         return null;
     })
+
+}
+// Auto-generated code. Do not edit.
+
+// Auto-generated code. Do not edit.
+namespace myTiles {
 
 }
 // Auto-generated code. Do not edit.

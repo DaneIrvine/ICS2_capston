@@ -1,4 +1,181 @@
 // Auto-generated code. Do not edit.
+namespace myImages {
+
+    helpers._registerFactory("image", function(name: string) {
+        switch(helpers.stringTrim(name)) {
+            case "myTiles.transparency16":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "myTiles.tile1":
+            case "myTile":return img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f e e f f e f f f f e f f e e 
+e f e e f f f f f e e f f e e e 
+e f f f f f e e f e e f f f e e 
+f f e e f e e e e e f e e e f f 
+`;
+            case "myTiles.tile3":
+            case "myTile1":return img`
+f f f f f f f f f f f f e e f f 
+f f f f f f f f f f f e e e e f 
+f f f f f f f f f f f e e e e f 
+f f f f f f f f f f f f e e f f 
+f f f f f f f f f f f f f f e f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f e e f 
+f f f f f f f f f f f f f e e e 
+f f f f f f f f f f f f f f f e 
+f f f f f f f f f f f e e f e e 
+f f f f f f f f f e f e e f f e 
+f f f f f f f f f f f f f f f f 
+f f e e f f e f f f f e f e e f 
+e f e e f f f f f e e f f e e e 
+e f f f f f e e f e e f f f e e 
+f f e e f e e e e e f e e e f f 
+`;
+            case "myTiles.tile2":
+            case "myTile0":return img`
+f f e e e f f f f f f f f f f f 
+e e f e e f f f f f f f f f f f 
+e e f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f e e f f f f f f f f f f f f f 
+e e e e f f f f f f f f f f f f 
+e e e e f f f f f f f f f f f f 
+f e e f f f f f f f f f f f f f 
+f f f f e f f f f f f f f f f f 
+e e e f f f f f f f f f f f f f 
+e e f f f f f f f f f f f f f f 
+f f e e f f e f f f f e f f e e 
+e f e e f f f f f e e f f e e e 
+e f f f f f e e f e e f f f e e 
+f f e e f e e e e e f e e e f f 
+`;
+            case "myTiles.tile4":
+            case "Broken wall horizontal":return img`
+c c c c d d d d d d c c c c c c 
+c c c c c c c c c c d d d c c c 
+6 6 6 6 c c 6 6 6 6 6 6 c c 6 6 
+c d c c c c c d c c c c c c c c 
+c d 6 6 6 6 c d c c c c c c c c 
+c c d c c c c 6 d 6 c c c c c d 
+6 6 d c 6 6 d 6 6 d 6 c c 6 d d 
+6 6 6 d 6 6 d 6 c c d c 6 6 d 6 
+c c c d c c d c c c d c d d c c 
+6 6 6 d 6 6 c d c 6 d d d 6 6 c 
+6 c c d c d d d d d d d c c 6 c 
+c c c c d d c c d c c c d c c c 
+d 6 c d 6 6 6 6 d 6 6 c d 6 6 6 
+c d d d d c c c d c 6 c d c c c 
+c c c d d c c c d c c d c c c c 
+6 6 6 c d d 6 6 6 6 d c c 6 6 6 
+`;
+            case "myTiles.tile5":
+            case "myTile2":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "myTiles.tile6":
+            case "myTile3":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "myTiles.tile7":
+            case "trap":return img`
+c b b b b b b b b b b b b b b c 
+c b b b b b b b b b b b b b b c 
+c d d d d d d d d d d d d d d c 
+c d d d d d d d d d d d d d d c 
+c d d c c c c c c c c c c d d c 
+c b b c b b b b b b b b c b b c 
+c d d c b b b b b b b b c d d c 
+c d d c 4 b b 5 5 b b 4 c d d c 
+c d d c b e 5 b b 5 e b c d d c 
+c d d c b e 4 5 5 4 e b c d d c 
+c b b c 4 b 5 4 f 5 b 4 c b b c 
+c d d c b b 4 4 e 4 b b c d d c 
+c d d c b b e 4 4 e b b c d d c 
+c d d c b b b e e b b b c d d c 
+c d d c b b b b b b b b c d d c 
+a c c c c c c c c c c c c c c a 
+`;
+        }
+        return null;
+    })
+
+    helpers._registerFactory("animation", function(name: string) {
+        switch(helpers.stringTrim(name)) {
+
+        }
+        return null;
+    })
+
+    helpers._registerFactory("song", function(name: string) {
+        switch(helpers.stringTrim(name)) {
+
+        }
+        return null;
+    })
+
+}
+// Auto-generated code. Do not edit.
+
+// Auto-generated code. Do not edit.
 namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const transparency16 = image.ofBuffer(hex``);
@@ -82,21 +259,21 @@ namespace myTiles {
 
     helpers._registerFactory("tile", function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "transparency16":return transparency16;
+            case "transparency16":return myTiles.transparency16;
             case "myTile":
-            case "tile1":return tile1;
+            case "tile1":return myTiles.tile1;
             case "myTile1":
-            case "tile3":return tile3;
+            case "tile3":return myTiles.tile3;
             case "myTile0":
-            case "tile2":return tile2;
+            case "tile2":return myTiles.tile2;
             case "Broken wall horizontal":
-            case "tile4":return tile4;
+            case "tile4":return myTiles.tile4;
             case "myTile2":
-            case "tile5":return tile5;
+            case "tile5":return myTiles.tile5;
             case "myTile3":
-            case "tile6":return tile6;
+            case "tile6":return myTiles.tile6;
             case "trap":
-            case "tile7":return tile7;
+            case "tile7":return myTiles.tile7;
         }
         return null;
     })
