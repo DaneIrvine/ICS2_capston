@@ -63,15 +63,17 @@ class EnemySprite extends sprites.ExtendableSprite {
 
 
 }
-class MrsEgan extends sprites.ExtendableSprite {
+class MrsEganType extends sprites.ExtendableSprite {
 
     hitPoints: number
 
     hit(points: number): void {
+        timer.throttle("action", 1000, function () {
         this.hitPoints -= points
-
+        })
         if (this.hitPoints <= 0) {
             this.destroy(effects.confetti, 250)
+            tiles.setTileAt(tiles.getTileLocation(14, 1), sprites.swamp.swampTile9)
         }
     }
 
@@ -128,16 +130,14 @@ for (let i = 0; i < ph.length; i++) {
 }*/
 
 function newMrseagentrueform() {
-    let bigbad: MrsEgan =
-        new MrsEgan(assets.image`Mrs Egan True Form`, SpriteKind.Enemy)
+    let bigbad: MrsEganType =
+        new MrsEganType(assets.image`Mrs Egan True Form`, SpriteKind.MrsEgan)
         bigbad.hitPoints = 5
         bigbad.follow(mySprite, 50, 50)
         tiles.placeOnTile(bigbad, tiles.getTileLocation(11, 4))
         animation.runImageAnimation(bigbad, assets.animation`Mrs Egan Running Down`, 120, true)
         game.onUpdate(function() {
-           //if (bigbad.vy > 0 && bigbad.vy > bigbad.vx) {
-            
-        //}  
+        
         })
        
 }
@@ -282,7 +282,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`trap`, function(sprite: Hero,
     })
 })
 //BOSS TRIGGERS TRAP
-scene.onOverlapTile(SpriteKind.MrsEgan, assets.tile`trap`, function (sprite: MrsEgan, location: tiles.Location) {
+scene.onOverlapTile(SpriteKind.MrsEgan, assets.tile`trap`, function (sprite: MrsEganType, location: tiles.Location) {
     let fuego = sprites.create(assets.image`fuego`, SpriteKind.Obstacle)
     animation.runImageAnimation(fuego, assets.animation`fire noises`, 40, false)
     tiles.placeOnTile(fuego, location)
@@ -290,14 +290,8 @@ scene.onOverlapTile(SpriteKind.MrsEgan, assets.tile`trap`, function (sprite: Mrs
     timer.after(100, function () {
         sprites.destroy(fuego)
     })
-    console.log(`I GOT EM'!!!!`)
 })
 
-/*sprites.onOverlap(SpriteKind.MrsEgan, SpriteKind.Obstacle, function(enemy: MrsEgan, obstacle: Sprite) {
-    
-    enemy.hit(1)
-})
-*/
 //DASH
 controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
     dash()
