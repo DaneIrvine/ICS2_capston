@@ -18,6 +18,8 @@ info.setLife(3)
 namespace SpriteKind {
     export const Obstacle = SpriteKind.create()
     export const MrsEgan = SpriteKind.create()
+    export const coin = SpriteKind.create()
+    export const heart = SpriteKind.create()
 }
 
 class Hero extends sprites.ExtendableSprite {
@@ -118,16 +120,15 @@ function newCowboyRight(x: number, y: number) {
     enemiesright.push(enemySprite)
 }
 
-/*function accessory_items() {
-    let items = []
-    let ph = tiles.getTilesByType(sprites.castle.rock0)
+function accessory_items() {
+    
+    let ph = tiles.getTilesByType(sprites.dungeon.chestOpen)
 for (let i = 0; i < ph.length; i++) {
-    let Enemy = sprites.create(assets.image`mushroomFrontLeft0`, SpriteKind.Enemy)
-    Enemy.setPosition(ph[i].x, ph[i].y)
-    Enemy.setVelocity(vxE,0)
+    let coin = sprites.create(assets.image`coin`, SpriteKind.coin)
+    coin.setPosition(ph[i].x, ph[i].y)
 
 }
-}*/
+}
 
 function newMrseagentrueform() {
     let bigbad: MrsEganType =
@@ -150,6 +151,7 @@ function newMrseagentrueform() {
 function levelchange(levelnumber: number) {
 //LEVEL 1
     if (levelnumber == 1) {
+        accessory_items()
         mySprite.setPosition(80, 220)
         tiles.placeOnTile(snail, tiles.getTileLocation(3, 14))
         snail.sayText("Since when were the cowboys lizards??!!")
@@ -204,7 +206,7 @@ function levelchange(levelnumber: number) {
 //LEVEL 2
     //#6
     if (levelnumber == 2) {
-        
+        accessory_items()
         sprites.destroy(snail)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 14))
         sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
@@ -266,6 +268,10 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function(sprite: Sprite, 
     mySprite.hit(1)
     levelNumber == 2
 })
+sprites.onOverlap(SpriteKind.MrsEgan, SpriteKind.Player, function(sprite: Sprite, otherSprite: Sprite) {
+    mySprite.hit(1)
+    levelNumber == 2
+})
 //HERO DAMADGED PROJECTILE
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function(sprite: Sprite, otherSprite: Sprite) {
     sprites.destroy(sprite)
@@ -314,6 +320,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function() {
 })
 
 //MAIN
+accessory_items()
 let mySprite = new Hero(assets.image`myImage`, SpriteKind.Player)
 tiles.setCurrentTilemap(levels[levelNumber])
 mySprite.setStayInScreen(true)
