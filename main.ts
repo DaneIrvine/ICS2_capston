@@ -125,8 +125,7 @@ function accessory_items() {
     let ph = tiles.getTilesByType(sprites.dungeon.chestOpen)
 for (let i = 0; i < ph.length; i++) {
     let coin = sprites.create(assets.image`coin`, SpriteKind.coin)
-    coin.setPosition(ph[i].x, ph[i].y)
-
+    tiles.placeOnTile(coin, ph[i])
 }
 }
 
@@ -151,14 +150,14 @@ function newMrseagentrueform() {
 function levelchange(levelnumber: number) {
 //LEVEL 1
     if (levelnumber == 1) {
-        accessory_items()
+        sprites.destroyAllSpritesOfKind(SpriteKind.coin)
         mySprite.setPosition(80, 220)
         tiles.placeOnTile(snail, tiles.getTileLocation(3, 14))
         snail.sayText("Since when were the cowboys lizards??!!")
 
         let evilfly= sprites.create(assets.image`Evil Fly`, SpriteKind.Enemy)
         tiles.placeOnTile(evilfly, tiles.getTileLocation(8, 1))
-
+        
 
         game.onUpdateInterval(500, function() {
 
@@ -180,7 +179,7 @@ function levelchange(levelnumber: number) {
                 newCowboyLeft(14, y)
                 y += 3
         }
-        
+        accessory_items()
         game.onUpdateInterval(1000, function() {
             if (levelNumber == 1) {
             let random = randint(0, 2)
@@ -206,7 +205,8 @@ function levelchange(levelnumber: number) {
 //LEVEL 2
     //#6
     if (levelnumber == 2) {
-        accessory_items()
+         sprites.destroyAllSpritesOfKind(SpriteKind.coin)
+        
         sprites.destroy(snail)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 14))
         sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
@@ -216,7 +216,7 @@ function levelchange(levelnumber: number) {
 
         scene.setBackgroundColor(15)
 
-
+accessory_items()
         game.onUpdate(function() {
             
         if (mySprite.tileKindAt(TileDirection.Top, sprites.dungeon.darkGroundCenter) || mySprite.tileKindAt(TileDirection.Right, sprites.dungeon.darkGroundCenter) || mySprite.tileKindAt(TileDirection.Left, sprites.dungeon.darkGroundCenter) || mySprite.tileKindAt(TileDirection.Bottom, sprites.dungeon.darkGroundCenter))
@@ -248,10 +248,10 @@ function levelchange(levelnumber: number) {
 //#2
 scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile9, function(sprite: Sprite, location: tiles.Location) {
     levelNumber += 1
+     tiles.setCurrentTilemap(levels[levelNumber])
     levelchange(levelNumber)
     
-    tiles.setCurrentTilemap(levels[levelNumber])
-
+   
    
     if (levelNumber == 3) {
         game.gameOver(true)
@@ -303,6 +303,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function() {
     dash()
 })
 
+//COIN COLLECT
+sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function(sprite: Sprite, otherSprite: Sprite) {
+    sprites.destroy(otherSprite)
+    info.changeScoreBy(1)
+})
+
+
 //ANIMATIONS
 //#8
 controller.up.onEvent(ControllerButtonEvent.Pressed, function() {
@@ -320,14 +327,14 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function() {
 })
 
 //MAIN
-accessory_items()
+
 let mySprite = new Hero(assets.image`myImage`, SpriteKind.Player)
 tiles.setCurrentTilemap(levels[levelNumber])
 mySprite.setStayInScreen(true)
 scene.cameraFollowSprite(mySprite)
 mySprite.setPosition(25,95)
 controller.moveSprite(mySprite, hero_velocity, hero_velocity)
-
+accessory_items()
 
 animation.runImageAnimation(snail,assets.animation`helpful snail idle`,350,true)
 snail.setPosition(100, 90)
