@@ -12,6 +12,8 @@ let levelNumber = 0
 let enemiesleft: Sprite[] = []
 let enemiesright: Sprite[] = []
 let snail = sprites.create(assets.image`Helpful snail`, 0)
+let health_bar = 60
+
 info.setLife(3)
 //CLASSES,#11,#12,#13
 
@@ -66,12 +68,14 @@ class EnemySprite extends sprites.ExtendableSprite {
 
 }
 class MrsEganType extends sprites.ExtendableSprite {
-
+    statusbar: StatusBarSprite
     hitPoints: number
 
     hit(points: number): void {
-        timer.throttle("action", 1000, function () {
-        this.hitPoints -= points
+        timer.throttle("action", 1000, () => {
+            health_bar -= 10
+            this.statusbar.setBarSize(health_bar, 4)
+            this.hitPoints -= points
         })
         if (this.hitPoints <= 0) {
             this.destroy(effects.confetti, 250)
@@ -82,9 +86,11 @@ class MrsEganType extends sprites.ExtendableSprite {
     constructor(image: Image, kind: number) {
         super(image, kind)
         this.hitPoints = 5
+        this.statusbar = statusbars.create(health_bar, 4, StatusBarKind.EnemyHealth)
+        this.statusbar.attachToSprite(this, 0, 0)
+        this.statusbar.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
+        this.statusbar.setLabel("HP")
     }
-
-
 }
 
 //FUNCTIONS
