@@ -302,5 +302,13 @@
         "namespace": "myAnimations.",
         "mimeType": "application/mkcd-animation",
         "displayName": "Dane walk left"
+    },
+    "anim22": {
+        "id": "anim22",
+        "data": "YzgwMDA4MDAwODAwMDYwMDAwYmJiYjAwYjA1NTU1MGI1YjNkZDNiNTViNTMxNWI1NWM1MzE1Y2RkYzFkZDFjZGYwZGRkZDBmMDBmZmZmMDAwMGJiMGIwMGIwNTViNTAwNWIzZDVkMGI1YjUzNTEwYjVjNTNkMTBjNWMxZGRkMGNmMGRkZmQwMDAwZmYwZjAwMDBiMDBiMDAwMDViYjUwMGIwZDU1MTBiYjAzNTUxMGJjMDM1ZDEwY2MwMTVkZDBjMDBkZmZkMDAwMGYwMGYwMDAwYjAwYjAwMDA1YmI1MDAwMDFiYjEwMDAwNWJiNTAwMDBkYmJkMDAwMGRjY2QwMDAwM2NjMzAwMDBmMDBmMDAwMGIwMGIwMDAwNWJiNTAwYjAxNTVkMGJiMDE1NTMwYmMwMWQ1MzBjYzBkZDUxMGMwMGRmZmQwMDAwZjAwZjAwMDBiMGJiMDAwMDViNTUwYmIwZDVkM2I1YjAxNTM1YjVjMDFkMzVjNWMwZGRkMWM1MDBkZmRkMGYwMGYwZmYwMA==",
+        "dataEncoding": "base64",
+        "namespace": "myAnimations.",
+        "mimeType": "application/mkcd-animation",
+        "displayName": "myAnim"
     }
 }

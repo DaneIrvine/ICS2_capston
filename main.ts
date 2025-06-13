@@ -5,7 +5,7 @@ const levels = [tilemap`level0`, tilemap`level4`, tilemap`level5`]
 const dash_length = 30
 const fly_projectile_speed = 50
 const fly_projectile_turnrate = 20
-const camera_shake_amount = 3
+const camera_shake_amount = 2
 const hero_velocity = 100
 //GLOBALS
 let levelNumber = 0
@@ -126,6 +126,7 @@ function accessory_items() {
 for (let i = 0; i < ph.length; i++) {
     let coin = sprites.create(assets.image`coin`, SpriteKind.coin)
     tiles.placeOnTile(coin, ph[i])
+    animation.runImageAnimation(coin, assets.animation`myAnim`, 75, true)
 }
 }
 
@@ -260,8 +261,8 @@ scene.onOverlapTile(SpriteKind.Player, sprites.swamp.swampTile9, function(sprite
 //WALL SHAKE
 scene.onHitWall(SpriteKind.Player, function(sprite: Sprite, location: tiles.Location) {
     
-    tiles.setTileAt(location, assets.tile`Broken wall horizontal`)
-    scene.cameraShake(camera_shake_amount, 250)
+    //tiles.setTileAt(location, assets.tile`Broken wall horizontal`)
+    scene.cameraShake(camera_shake_amount, 500)
 })
 //HERO DAMADGED
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function(sprite: Sprite, otherSprite: Sprite) {
